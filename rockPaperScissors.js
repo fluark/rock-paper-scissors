@@ -44,8 +44,3 @@ function playRound(playerSelection, computerSelection) {
 let playerSelection = "paper"; //string has no effect on move
 let computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
-
-/* copy this code onto desktop. remove repos folder from icloud
-clone remote   RPS repo into repo folder on laptop
-pull changes from github
-push new local changes. */
