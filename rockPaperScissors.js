@@ -2,29 +2,37 @@ function getComputerChoice() { // randomly return R, P or S for comps play
     const array = ["rock", "paper", "scissors"]
     return array[(Math.floor(Math.random() * (array.length)))];
 }
+userScore = 0
+computerScore = 0
 
 function playRound(playerSelection, computerSelection) {
 
     if (playerSelection === "paper") {
         if (computerSelection === "scissors") {
-            return "You lose! Scissors beats paper";
+            computerScore++
+            console.log("Computer: " + computerScore + " You: " + userScore + " You lose! Scissors beats paper")
+           
         }
         if (computerSelection === "rock") {
-            return "You win! Paper beats " + computerSelection;
-        } else {
-          return "It\'s a tie!";
-        }
+            userScore++
+            console.log("Computer: " + computerScore + " You: " + userScore + " You win! Paper beats " + computerSelection) 
             
+        } else {
+          return "It\'s a tie!"
+        }
+             
     }
 
     if (playerSelection === "rock") {
         if (computerSelection === "paper") {
-            return "You lose! Paper beats rock"; 
+            computerScore++
+            console.log("Computer: " + computerScore + " You: " + userScore + " You lose! Paper beats rock") 
         }
         if (computerSelection === "scissors") {
-            return "You win! Rock beats " + computerSelection;
+            userScore++
+            console.log("Computer: " + computerScore + " You: " + userScore +  " You win! Rock beats " + computerSelection)
         } else {
-          return "It\'s a tie!";
+          return "It\'s a tie!"
         }
     }
 
@@ -43,29 +51,30 @@ function playRound(playerSelection, computerSelection) {
 
 let computerSelection = getComputerChoice();
 
-function game(){
-    newRound = prompt("Choose rock, paper, or scissors").toLowerCase()
-    playRound(newRound, computerSelection)
-    console.log(playRound(newRound, computerSelection));
+
+function game(){ // plays round 5 times when invoked
+    newRound = prompt("Choose rock, paper, or scissors").toLowerCase() // assigns the variable newRound to the return value of playRound by prompting player to begin round
+    playRound(newRound, computerSelection) // calling playRound with the value the user types and the computerSelection variable
+   // display the results of playRound with string
 
     newRound = prompt("Choose rock, paper, or scissors").toLowerCase()
     playRound(newRound, computerSelection)
-    console.log(playRound(newRound, computerSelection));
+   
+   
 
     newRound = prompt("Choose rock, paper, or scissors").toLowerCase()
     playRound(newRound, computerSelection)
-    console.log(playRound(newRound, computerSelection));
+   
+    
 
     newRound = prompt("Choose rock, paper, or scissors").toLowerCase()
     playRound(newRound, computerSelection)
-    console.log(playRound(newRound, computerSelection));
+ 
+    
 
     newRound = prompt("Choose rock, paper, or scissors").toLowerCase()
     playRound(newRound, computerSelection)
-    console.log(playRound(newRound, computerSelection));
+   
+   
 }
-game() 
-
-
-
-
+game()
